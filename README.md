@@ -1,0 +1,1 @@
+# tradingideas26.github.io
