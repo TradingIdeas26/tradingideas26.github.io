@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$VST &middot; 5-year valuation &middot; TradingIdeas26</title>
+<meta name="description" content="My 5-year valuation with its arithmetic, and a stress test below it. Research by @TradingIdeas26. Not investment advice.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="$VST · My 5-year valuation: +1650%">
+<meta property="og:description" content="My 5-year valuation with its arithmetic, and a stress test below it. Research by @TradingIdeas26. Not investment advice.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://tradingideas26.github.io/v/VST-20261008-113150.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://tradingideas26.github.io/v/VST-20261008-113150.png">
+<meta name="twitter:image:alt" content="$VST · My 5-year valuation: +1650%">
+<meta name="twitter:site" content="@TradingIdeas26">
+<meta name="twitter:title" content="$VST · My 5-year valuation: +1650%">
+<meta name="twitter:description" content="My 5-year valuation with its arithmetic, and a stress test below it. Research by @TradingIdeas26. Not investment advice.">
+<meta name="theme-color" content="#0b1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060a13;--ink:#e8edf5;--muted:#93a1b5;--line:rgba(148,163,184,.16);
+--card:rgba(13,20,36,.72);--up1:#34d399;--up2:#22d3ee;--dn1:#fb7185;--dn2:#f59e0b;--b:#a5b4fc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+background:radial-gradient(900px 620px at -10% -10%,rgba(124,58,237,.9),transparent 60%),
+radial-gradient(820px 560px at 110% 0%,rgba(6,182,212,.8),transparent 58%),
+radial-gradient(900px 720px at 50% 115%,rgba(16,185,129,.6),transparent 60%),#0b1020;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;
+background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;
+-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 25%,transparent 72%);
+mask-image:radial-gradient(ellipse at 50% 0%,#000 25%,transparent 72%)}
+main{position:relative;max-width:760px;margin:0 auto;padding:18px 16px 56px}
+a{color:inherit}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0 22px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+background:linear-gradient(135deg,var(--up1),var(--up2));box-shadow:0 6px 24px rgba(34,211,238,.35)}
+.brand b{display:block;font-size:.98rem;letter-spacing:-.01em}
+.brand small{display:block;color:var(--muted);font-size:.74rem;margin-top:-2px}
+.pill{font-size:.82rem;font-weight:600;text-decoration:none;padding:8px 14px;border-radius:999px;
+border:1px solid var(--line);background:rgba(255,255,255,.04);white-space:nowrap}
+.hero h1{font-size:clamp(2rem,7vw,2.8rem);line-height:1.05;letter-spacing:-.03em;margin:0}
+.hero .name{color:var(--muted);font-size:1rem;margin:6px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.chip{font-size:.74rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.frame{position:relative;margin:22px 0 14px;padding:22px 20px;border-radius:22px;
+border:1px solid transparent;
+background:linear-gradient(var(--card),var(--card)) padding-box,
+linear-gradient(135deg,rgba(52,211,153,.75),rgba(34,211,238,.35) 45%,rgba(165,180,252,.35)) border-box;
+box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.02) inset;
+-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.big{font-size:clamp(3.4rem,15vw,5.2rem);line-height:1;font-weight:800;letter-spacing:-.04em;margin:6px 0 4px;
+background:linear-gradient(90deg,var(--up1),var(--up2));-webkit-background-clip:text;background-clip:text;color:transparent;
+font-variant-numeric:tabular-nums}
+.big.neg{background:linear-gradient(90deg,var(--dn1),var(--dn2));-webkit-background-clip:text;background-clip:text}
+.sub{color:var(--muted);margin:0 0 16px}
+.eq{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:4px 0 12px}
+.term{flex:1 1 140px;min-width:0;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+.term .k{display:block;font-size:.72rem;color:var(--muted);line-height:1.25}
+.term .v{display:block;font-size:1.18rem;font-weight:700;font-variant-numeric:tabular-nums;margin-top:2px}
+.term.hl{border-color:rgba(52,211,153,.55);background:rgba(52,211,153,.08)}
+.op{font-weight:700;color:var(--up2);font-size:.95rem;padding:0 2px;white-space:nowrap}
+.note{font-size:.9rem;color:var(--muted);margin:6px 0 0}
+.note b{color:var(--ink)}
+.cta-line{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;
+margin:0 0 8px;padding:12px 14px;border-radius:14px;border:1px dashed var(--line);font-size:.9rem;color:var(--muted)}
+.btn{display:inline-block;font-weight:700;text-decoration:none;padding:11px 18px;border-radius:12px;
+color:#051016;background:linear-gradient(90deg,var(--up1),var(--up2));box-shadow:0 8px 26px rgba(34,211,238,.25)}
+.btn.ghost{color:var(--ink);background:rgba(255,255,255,.05);border:1px solid var(--line);box-shadow:none}
+.detail{margin-top:56px;padding-top:26px;border-top:1px solid var(--line)}
+.detail h2{font-size:1.25rem;letter-spacing:-.02em;margin:0}
+.muted-p{color:var(--muted);margin:4px 0 14px;font-size:.92rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:14px 0}
+.card{padding:16px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.card-k{font-size:.78rem;color:var(--muted)}
+.card-v{font-size:1.9rem;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.card-s{font-size:.86rem}
+.card-n{font-size:.8rem;color:var(--muted);margin-top:4px}
+.card.muted{opacity:.85}
+.chartbox{margin:16px 0 6px;padding:10px 8px 6px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.chart{width:100%;height:auto;display:block}
+.chart .g{stroke:rgba(148,163,184,.12)}
+.chart .today{stroke:rgba(148,163,184,.45);stroke-dasharray:4 5}
+.chart .ax{fill:#7f8ca0;font-size:11px}
+.chart .ln{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.chart .lb{font-size:12px;font-weight:700}
+.c-a.ln{stroke:var(--up1)} .c-a.dot{fill:var(--up1)} .c-a.lb{fill:var(--up1)}
+.c-b.ln{stroke:var(--b);stroke-dasharray:7 6} .c-b.dot{fill:var(--b)} .c-b.lb{fill:var(--b)}
+.c-c.ln{stroke:var(--dn2);stroke-dasharray:2 6} .c-c.dot{fill:var(--dn2)} .c-c.lb{fill:var(--dn2)}
+figcaption{display:flex;gap:14px;flex-wrap:wrap;padding:6px 8px 4px;font-size:.8rem;color:var(--muted)}
+.key i{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.key.c-a i{background:var(--up1)} .key.c-b i{background:var(--b)} .key.c-c i{background:var(--dn2)}
+h3{font-size:1rem;margin:22px 0 6px}
+table{width:100%;border-collapse:collapse;font-size:.92rem;font-variant-numeric:tabular-nums}
+td,th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:.8rem}
+.detail p{color:#c5cfdd}
+.cta{margin:40px 0 0;padding:24px 20px;border-radius:22px;text-align:center;
+background:radial-gradient(600px 200px at 50% 0%,rgba(52,211,153,.18),transparent 70%),var(--card);border:1px solid var(--line)}
+.cta h2{font-size:1.35rem;letter-spacing:-.02em;margin:0 0 6px}
+.cta p{color:var(--muted);margin:0 auto 16px;max-width:520px}
+.cta .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+footer{margin-top:28px;font-size:.78rem;color:#7f8ca0}
+footer p{margin:6px 0}
+/* design review 2026-09-30: a label under the number, the disclaimer inside
+   the frame (a screenshot of the frame alone must still say what it is), a
+   narrow chart for phones, and the equation as a calculator tape */
+.big-k{font-size:1.05rem;font-weight:600;margin:0 0 6px}
+.own{margin:14px 0 0;font-size:.8rem;color:var(--muted)}
+.chart.narrow{display:none}
+@media (max-width:480px){.chart.wide{display:none}.chart.narrow{display:block}}
+.key.today i{height:0;border-top:2px dashed var(--muted);background:none}
+@media (min-width:701px){.eq{flex-wrap:nowrap}.term{flex:1 1 0}}
+@media (max-width:700px){.eq{display:grid;grid-template-columns:minmax(6rem,max-content) 1fr;gap:6px 10px}
+.eq .term{grid-column:2}.eq .op{grid-column:1;justify-self:end;align-self:center;padding:0}}
+
+.frame{--sa:var(--acc,var(--up1,var(--g,#0e6b47)))}
+.fhead{font-size:clamp(1.25rem,4.4vw,1.7rem);line-height:1.3;font-weight:700;letter-spacing:-.01em;
+margin:8px 0 16px;color:var(--ink)}
+.fhead em{font-style:normal;color:var(--sa)}
+.tape{display:none}
+.kpis{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:8px;margin:0 0 4px}
+.kpi{padding:12px 12px 10px;border:1px solid var(--line);border-radius:10px;background:var(--card);min-width:0}
+.kpi span{display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kpi b{display:block;font-size:1.2rem;font-variant-numeric:tabular-nums;margin-top:4px;color:var(--ink);white-space:nowrap}
+.kpi.main b{font-size:2.2rem;line-height:1.05;color:var(--sa)}
+@media (max-width:600px){.kpis{grid-template-columns:1fr 1fr 1fr}.kpi.main{grid-column:1/-1}}
+.steps{list-style:none;margin:16px 0 8px;padding:0;display:grid;gap:10px}
+.steps li{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;padding:14px 14px 12px;
+border:1px solid var(--line);border-radius:8px;background:var(--card)}
+.sn{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.9rem;
+color:var(--bg,#fff);background:var(--sa)}
+.sb{min-width:0}
+.st{font-weight:700;font-size:1.02rem;margin:3px 0 2px;color:var(--ink)}
+.sb p{margin:0 0 10px;font-size:.95rem;color:var(--muted)}
+.sb p b{color:var(--ink)}
+.bars{display:flex;align-items:stretch;gap:6px;height:150px}
+.bar{flex:1 1 0;min-width:0;display:flex;flex-direction:column}
+.bar .tr{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.bar b{font-size:.8rem;font-variant-numeric:tabular-nums;margin-bottom:4px;white-space:nowrap;color:var(--ink)}
+.bar i{display:block;width:100%;border-radius:5px 5px 2px 2px;background:var(--sa);opacity:.32}
+.bar.end i{opacity:1}
+.bar.end b{font-size:.92rem}
+.bar small{display:block;height:1.3em;font-size:.68rem;color:var(--muted);margin-top:5px;white-space:nowrap;
+text-align:center}
+.bar:first-child small{text-align:left}
+.bar.end small{text-align:right}
+.calc{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 12px;border-radius:8px;
+border:1px solid var(--sa);background:color-mix(in srgb,var(--sa) 9%,transparent)}
+.calc span{color:var(--muted);font-variant-numeric:tabular-nums}
+.calc b{font-size:1.3rem;font-variant-numeric:tabular-nums;color:var(--ink)}
+.trust{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
+.tb{font-size:.72rem;font-weight:600;padding:3px 9px;border-radius:999px;border:1px solid var(--line);
+color:var(--ink);white-space:nowrap}
+@media (max-width:420px){.steps li{grid-template-columns:26px 1fr;gap:10px;padding:12px 10px}
+.sn{width:26px;height:26px;font-size:.8rem}.bars{gap:4px;height:130px}.bar b{font-size:.72rem}}
+
+body{font-family:"Plus Jakarta Sans",Inter,system-ui,-apple-system,sans-serif}
+.frame{--sa:#5eead4;border-radius:26px;padding:24px 20px;
+background:linear-gradient(rgba(16,22,44,.78),rgba(16,22,44,.78)) padding-box,
+linear-gradient(135deg,rgba(94,234,212,.85),rgba(129,140,248,.6),rgba(192,132,252,.6)) border-box}
+.eyebrow{color:#a5b4fc;font-weight:700;letter-spacing:.12em}
+.fhead{font-weight:800;font-size:clamp(1.35rem,4.8vw,1.85rem);letter-spacing:-.02em}
+.fhead em{background:linear-gradient(90deg,#5eead4,#818cf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kpi{border-radius:16px;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+.kpi.main b{background:linear-gradient(90deg,#5eead4,#818cf8,#c084fc);-webkit-background-clip:text;
+background-clip:text;color:transparent;font-weight:800}
+.steps li{border-radius:18px;background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.09)}
+.sn{background:linear-gradient(135deg,#5eead4,#818cf8);color:#0b1020}
+.bar i{background:linear-gradient(180deg,#818cf8,#5eead4)}
+.calc{border-radius:14px;border-color:rgba(94,234,212,.6)}
+.tb{background:rgba(255,255,255,.06)}
+.card,.chartbox,.cta{border-radius:22px}
+
+.bo{margin:26px 0 10px}.bo h2{margin:0 0 4px}.bo .muted-p{margin:0 0 12px}
+.bo-card{border-radius:16px;padding:14px 14px 10px;box-shadow:0 18px 40px rgba(2,6,23,.45),inset 0 1px 0 rgba(255,255,255,.04)}
+.bo-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px;margin:0 2px 10px}
+.bo-tk{font:800 15px/1.2 system-ui,-apple-system,Segoe UI,sans-serif;letter-spacing:.2px}
+.bo-tk small{font-weight:600;opacity:.65;margin-left:8px;font-size:12px}
+.bo-pills{display:flex;flex-wrap:wrap;gap:6px}
+.bo-pill{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border-radius:999px;font:600 11.5px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.bo-pill i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.bo-wrap{position:relative;border-radius:10px;overflow:hidden}
+.bo-chart{height:380px}@media (max-width:600px){.bo-chart{height:300px}.bo-card{padding:10px 8px 8px}}
+.bo-band{position:absolute;top:0;bottom:26px;z-index:4;display:none;pointer-events:none;border-radius:4px}
+.bo-tag{position:absolute;z-index:5;display:none;pointer-events:none;transform:translate(-50%,0);top:10px;padding:3px 9px;border-radius:999px;font:700 11.5px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;color:#04130b;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.bo-foot{display:flex;justify-content:space-between;gap:10px;font:11px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;opacity:.6;margin:8px 2px 0}
+</style></head>
+<body><main>
+<header class="top">
+<a class="brand" href="https://x.com/TradingIdeas26"><span class="logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#051016" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+<span><b>TradingIdeas26</b><small>Algorithmic breakout research</small></span></a>
+<a class="pill" href="https://x.com/TradingIdeas26">Follow on X</a>
+</header>
+<section class="hero">
+<h1>$VST</h1>
+<p class="name">Vistra Corp &middot; bought at $165.22 &middot; Oct 08, 2026</p>
+<div class="chips"><span class="chip">Utilities</span><span class="chip">Utilities - Independent Power Producers</span></div>
+</section>
+<section class="bo">
+<h2>The breakout</h2>
+<p class="muted-p">Bought at $165.22 when $VST broke above its trend line at $162.39.</p>
+<div class="bo-card" style="background:#0b1d4a;border:1px solid rgba(147,197,253,.30);color:#c7d7f5">
+<div class="bo-head"><span class="bo-tk" style="color:#fff">$VST<small>Daily &middot; breakout</small></span>
+<span class="bo-pills"><span class="bo-pill" style="color:#c7d7f5"><i style="background:#93c5fd"></i>Trend line <b style="color:#fff">$162.39</b></span><span class="bo-pill" style="color:#c7d7f5"><i style="background:#fbbf24"></i>Bought <b style="color:#fff">$165.22</b></span></span></div>
+<div class="bo-wrap"><div class="bo-chart" id="bo-chart"></div>
+<div class="bo-band" id="bo-band"></div><div class="bo-tag" id="bo-tag"></div></div>
+<div class="bo-foot"><span>Daily candles to the day of the buy, Oct 08, 2026</span><span>@TradingIdeas26</span></div>
+</div>
+</section>
+<script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js" integrity="sha384-JZigAjwiaZtkUbA44CWkPaT3iBb/mU5pO6QOANp+OqHd4q+1+7MG1kzp2OOP9ZfP" crossorigin="anonymous"></script>
+<script>
+(function(){
+var d={"ticker":"VST","bars":[{"time":"2026-03-12","open":157.08,"high":163.2,"low":156.7,"close":159.58},{"time":"2026-03-13","open":161.76,"high":165.24,"low":157.73,"close":158.95},{"time":"2026-03-16","open":161.0,"high":163.5,"low":160.11,"close":161.99},{"time":"2026-03-17","open":162.81,"high":165.46,"low":162.12,"close":164.33},{"time":"2026-03-18","open":165.75,"high":173.0,"low":165.5,"close":170.12},{"time":"2026-03-19","open":167.17,"high":169.6,"low":164.23,"close":167.37},{"time":"2026-03-20","open":166.47,"high":166.47,"low":144.83,"close":146.02},{"time":"2026-03-23","open":151.45,"high":155.9,"low":149.335,"close":151.29},{"time":"2026-03-24","open":150.55,"high":154.1,"low":149.55,"close":152.72},{"time":"2026-03-25","open":155.0,"high":157.95,"low":150.38,"close":151.51},{"time":"2026-03-26","open":149.5,"high":152.67,"low":146.49,"close":152.3},{"time":"2026-03-27","open":151.75,"high":160.2,"low":151.75,"close":155.48},{"time":"2026-03-30","open":157.1,"high":158.93,"low":146.6,"close":147.54},{"time":"2026-03-31","open":143.9,"high":151.47,"low":142.34,"close":150.33},{"time":"2026-04-01","open":151.47,"high":156.34,"low":151.4,"close":153.96},{"time":"2026-04-02","open":151.21,"high":154.56,"low":150.12,"close":151.18},{"time":"2026-04-06","open":151.04,"high":153.105,"low":149.88,"close":151.59},{"time":"2026-04-07","open":151.07,"high":154.16,"low":150.28,"close":153.68},{"time":"2026-04-08","open":160.75,"high":161.31,"low":155.29,"close":155.89},{"time":"2026-04-09","open":155.89,"high":162.53,"low":152.68,"close":152.75},{"time":"2026-04-10","open":153.5,"high":158.63,"low":153.11,"close":154.73},{"time":"2026-04-13","open":152.65,"high":160.72,"low":152.65,"close":158.2},{"time":"2026-04-14","open":162.41,"high":165.28,"low":160.345,"close":163.97},{"time":"2026-04-15","open":165.5,"high":166.52,"low":162.15,"close":162.94},{"time":"2026-04-16","open":164.57,"high":166.92,"low":162.61,"close":165.53},{"time":"2026-04-17","open":166.26,"high":168.49,"low":162.2601,"close":163.46},{"time":"2026-04-20","open":163.05,"high":164.05,"low":158.32,"close":159.6},{"time":"2026-04-21","open":160.76,"high":161.1,"low":154.13,"close":154.91},{"time":"2026-04-22","open":157.8,"high":159.08,"low":154.92,"close":155.79},{"time":"2026-04-23","open":155.96,"high":158.87,"low":154.5,"close":156.85},{"time":"2026-04-24","open":156.33,"high":165.48,"low":155.1501,"close":164.35},{"time":"2026-04-27","open":165.0,"high":168.42,"low":158.735,"close":166.58},{"time":"2026-04-28","open":162.5,"high":163.325,"low":158.72,"close":161.12},{"time":"2026-04-29","open":160.86,"high":161.139,"low":153.08,"close":153.79},{"time":"2026-04-30","open":156.29,"high":159.63,"low":155.7301,"close":157.84},{"time":"2026-05-01","open":158.31,"high":160.14,"low":154.93,"close":155.28},{"time":"2026-05-04","open":157.69,"high":162.38,"low":157.44,"close":160.85},{"time":"2026-05-05","open":163.0,"high":163.8,"low":159.8,"close":160.38},{"time":"2026-05-06","open":161.495,"high":162.99,"low":156.6,"close":158.29},{"time":"2026-05-07","open":163.04,"high":168.39,"low":153.77,"close":153.95},{"time":"2026-05-08","open":155.0,"high":155.0,"low":146.98,"close":147.72},{"time":"2026-05-11","open":148.0,"high":152.75,"low":146.2781,"close":152.05},{"time":"2026-05-12","open":149.49,"high":150.3225,"low":145.66,"close":146.87},{"time":"2026-05-13","open":146.28,"high":146.28,"low":139.51,"close":142.61},{"time":"2026-05-14","open":141.38,"high":143.295,"low":139.9221,"close":141.9},{"time":"2026-05-15","open":139.775,"high":141.09,"low":137.81,"close":139.68},{"time":"2026-05-18","open":139.0,"high":139.54,"low":133.86,"close":136.75},{"time":"2026-05-19","open":135.8,"high":136.7,"low":132.66,"close":134.71},{"time":"2026-05-20","open":138.0,"high":144.9,"low":137.81,"close":144.0},{"time":"2026-05-21","open":145.47,"high":149.28,"low":144.88,"close":149.08},{"time":"2026-05-22","open":151.03,"high":157.57,"low":150.75,"close":156.27},{"time":"2026-05-26","open":158.91,"high":167.4,"low":158.22,"close":164.56},{"time":"2026-05-27","open":164.96,"high":165.0223,"low":158.4075,"close":160.15},{"time":"2026-05-28","open":158.84,"high":163.53,"low":157.6,"close":160.28},{"time":"2026-05-29","open":160.0,"high":162.29,"low":156.88,"close":160.23},{"time":"2026-06-01","open":157.0,"high":158.55,"low":151.33,"close":154.76},{"time":"2026-06-02","open":155.94,"high":160.78,"low":152.88,"close":157.97},{"time":"2026-06-03","open":156.51,"high":157.91,"low":152.95,"close":153.8},{"time":"2026-06-04","open":151.54,"high":154.04,"low":150.19,"close":153.7},{"time":"2026-06-05","open":152.0,"high":154.29,"low":147.5,"close":148.76},{"time":"2026-06-08","open":148.31,"high":149.3004,"low":146.38,"close":146.9},{"time":"2026-06-09","open":148.42,"high":150.2999,"low":141.54,"close":146.22},{"time":"2026-06-10","open":143.35,"high":143.9999,"low":137.91,"close":138.54},{"time":"2026-06-11","open":140.99,"high":146.8999,"low":139.57,"close":146.38},{"time":"2026-06-12","open":148.0,"high":150.5,"low":147.0,"close":148.02},{"time":"2026-06-15","open":152.81,"high":155.45,"low":150.2487,"close":153.52},{"time":"2026-06-16","open":153.25,"high":161.48,"low":152.83,"close":158.61},{"time":"2026-06-17","open":158.565,"high":162.44,"low":157.21,"close":158.83},{"time":"2026-06-18","open":162.09,"high":170.34,"low":160.03,"close":163.75},{"time":"2026-06-22","open":163.505,"high":170.5,"low":162.9,"close":167.26},{"time":"2026-06-23","open":160.08,"high":165.825,"low":159.1448,"close":162.39},{"time":"2026-06-24","open":163.03,"high":165.64,"low":159.88,"close":162.87},{"time":"2026-06-25","open":166.91,"high":171.35,"low":166.01,"close":167.77},{"time":"2026-06-26","open":165.86,"high":167.93,"low":163.19,"close":163.49},{"time":"2026-06-29","open":163.7,"high":165.6,"low":161.02,"close":162.38},{"time":"2026-06-30","open":162.58,"high":165.45,"low":156.51,"close":158.63},{"time":"2026-07-01","open":156.0,"high":157.32,"low":151.05,"close":153.16},{"time":"2026-07-02","open":153.95,"high":156.24,"low":148.5,"close":151.05},{"time":"2026-07-06","open":152.47,"high":157.24,"low":152.01,"close":157.22},{"time":"2026-07-07","open":156.13,"high":159.41,"low":154.01,"close":155.73},{"time":"2026-07-08","open":153.99,"high":156.489,"low":151.32,"close":154.82},{"time":"2026-07-09","open":159.01,"high":161.1799,"low":157.445,"close":157.98},{"time":"2026-07-10","open":157.55,"high":160.02,"low":157.05,"close":158.86},{"time":"2026-07-13","open":157.65,"high":159.43,"low":156.2,"close":158.12},{"time":"2026-07-14","open":161.0,"high":168.21,"low":157.0323,"close":158.43},{"time":"2026-07-15","open":162.5,"high":166.94,"low":157.94,"close":160.23},{"time":"2026-07-16","open":157.87,"high":158.1,"low":148.5178,"close":152.56},{"time":"2026-07-17","open":150.36,"high":157.25,"low":148.14,"close":155.44},{"time":"2026-07-20","open":157.52,"high":158.57,"low":155.6,"close":157.99},{"time":"2026-07-21","open":160.99,"high":164.46,"low":160.01,"close":162.33},{"time":"2026-07-22","open":160.11,"high":167.81,"low":159.63,"close":166.74},{"time":"2026-07-23","open":166.26,"high":169.06,"low":165.01,"close":168.98},{"time":"2026-07-24","open":168.695,"high":169.76,"low":162.31,"close":163.38},{"time":"2026-07-27","open":165.5,"high":166.145,"low":155.54,"close":157.08},{"time":"2026-07-28","open":153.92,"high":153.99,"low":146.21,"close":148.64},{"time":"2026-07-29","open":148.725,"high":149.28,"low":142.155,"close":142.81},{"time":"2026-07-30","open":148.0,"high":151.9695,"low":147.085,"close":148.62},{"time":"2026-07-31","open":151.85,"high":153.13,"low":146.52,"close":148.19},{"time":"2026-08-03","open":148.77,"high":156.955,"low":146.19,"close":155.94},{"time":"2026-08-04","open":155.6,"high":156.99,"low":143.03,"close":143.23},{"time":"2026-08-05","open":143.895,"high":145.5,"low":140.17,"close":140.58},{"time":"2026-08-06","open":142.0,"high":143.0227,"low":140.14,"close":141.38},{"time":"2026-08-07","open":138.615,"high":142.69,"low":134.75,"close":140.59},{"time":"2026-08-10","open":141.91,"high":144.86,"low":141.0505,"close":142.87},{"time":"2026-08-11","open":144.54,"high":146.9,"low":143.11,"close":144.92},{"time":"2026-08-12","open":149.0,"high":149.38,"low":145.3,"close":146.68},{"time":"2026-08-13","open":146.25,"high":147.77,"low":144.801,"close":146.4},{"time":"2026-08-14","open":146.9,"high":150.18,"low":146.13,"close":148.13},{"time":"2026-08-17","open":149.37,"high":149.8645,"low":145.21,"close":146.11},{"time":"2026-08-18","open":144.5,"high":145.54,"low":138.77,"close":140.52},{"time":"2026-08-19","open":140.74,"high":142.77,"low":138.13,"close":142.7},{"time":"2026-08-20","open":142.7,"high":143.5,"low":138.33,"close":138.94},{"time":"2026-08-21","open":139.99,"high":140.3158,"low":136.18,"close":136.21},{"time":"2026-08-24","open":135.88,"high":137.2,"low":134.5,"close":135.66},{"time":"2026-08-25","open":138.37,"high":140.26,"low":137.39,"close":139.03},{"time":"2026-08-26","open":139.4,"high":144.03,"low":139.3045,"close":140.03},{"time":"2026-08-27","open":142.0,"high":142.505,"low":138.45,"close":139.81},{"time":"2026-08-28","open":140.89,"high":141.1,"low":136.61,"close":137.09},{"time":"2026-08-31","open":136.79,"high":137.94,"low":135.62,"close":137.37},{"time":"2026-09-01","open":136.5,"high":139.28,"low":134.9,"close":138.08},{"time":"2026-09-02","open":137.82,"high":144.1456,"low":136.95,"close":143.46},{"time":"2026-09-03","open":145.0,"high":148.7759,"low":142.81,"close":144.22},{"time":"2026-09-04","open":143.87,"high":149.45,"low":143.16,"close":149.3},{"time":"2026-09-08","open":151.0,"high":154.9,"low":150.365,"close":151.72},{"time":"2026-09-09","open":150.0,"high":151.56,"low":148.9,"close":151.1},{"time":"2026-09-10","open":150.0,"high":152.8,"low":147.03,"close":147.05},{"time":"2026-09-11","open":148.82,"high":149.08,"low":146.67,"close":148.38},{"time":"2026-09-14","open":144.0,"high":145.2457,"low":140.37,"close":140.73},{"time":"2026-09-15","open":141.84,"high":143.22,"low":140.26,"close":141.53},{"time":"2026-09-16","open":143.38,"high":143.6999,"low":139.62,"close":140.39},{"time":"2026-09-17","open":144.1,"high":146.11,"low":141.53,"close":143.56},{"time":"2026-09-18","open":143.395,"high":144.45,"low":140.21,"close":140.67},{"time":"2026-09-21","open":142.0,"high":142.44,"low":138.95,"close":140.78},{"time":"2026-09-22","open":141.44,"high":142.64,"low":140.0,"close":140.41},{"time":"2026-09-23","open":139.57,"high":140.5,"low":137.62,"close":137.97},{"time":"2026-09-24","open":136.2,"high":139.13,"low":135.98,"close":137.94},{"time":"2026-09-25","open":138.96,"high":140.1,"low":136.025,"close":138.46},{"time":"2026-09-28","open":138.08,"high":139.01,"low":135.77,"close":138.02},{"time":"2026-09-29","open":140.0,"high":143.51,"low":138.8501,"close":140.83},{"time":"2026-09-30","open":140.02,"high":140.76,"low":133.44,"close":138.35},{"time":"2026-10-01","open":139.16,"high":141.68,"low":137.08,"close":139.75},{"time":"2026-10-02","open":142.05,"high":143.02,"low":134.79,"close":140.02},{"time":"2026-10-05","open":144.04,"high":146.94,"low":140.9,"close":144.89},{"time":"2026-10-06","open":151.47,"high":162.6899,"low":151.44,"close":160.5},{"time":"2026-10-07","open":154.77,"high":168.11,"low":154.02,"close":166.72},{"time":"2026-10-08","open":165.209,"high":165.209,"low":165.209,"close":165.209}],"resistance":[{"time":"2026-03-12","value":182.56},{"time":"2026-03-13","value":182.4209},{"time":"2026-03-16","value":182.2817},{"time":"2026-03-17","value":182.1426},{"time":"2026-03-18","value":182.0035},{"time":"2026-03-19","value":181.8643},{"time":"2026-03-20","value":181.7252},{"time":"2026-03-23","value":181.5861},{"time":"2026-03-24","value":181.447},{"time":"2026-03-25","value":181.3078},{"time":"2026-03-26","value":181.1687},{"time":"2026-03-27","value":181.0296},{"time":"2026-03-30","value":180.8904},{"time":"2026-03-31","value":180.7513},{"time":"2026-04-01","value":180.6122},{"time":"2026-04-02","value":180.473},{"time":"2026-04-06","value":180.3339},{"time":"2026-04-07","value":180.1948},{"time":"2026-04-08","value":180.0557},{"time":"2026-04-09","value":179.9165},{"time":"2026-04-10","value":179.7774},{"time":"2026-04-13","value":179.6383},{"time":"2026-04-14","value":179.4991},{"time":"2026-04-15","value":179.36},{"time":"2026-04-16","value":179.2209},{"time":"2026-04-17","value":179.0817},{"time":"2026-04-20","value":178.9426},{"time":"2026-04-21","value":178.8035},{"time":"2026-04-22","value":178.6643},{"time":"2026-04-23","value":178.5252},{"time":"2026-04-24","value":178.3861},{"time":"2026-04-27","value":178.247},{"time":"2026-04-28","value":178.1078},{"time":"2026-04-29","value":177.9687},{"time":"2026-04-30","value":177.8296},{"time":"2026-05-01","value":177.6904},{"time":"2026-05-04","value":177.5513},{"time":"2026-05-05","value":177.4122},{"time":"2026-05-06","value":177.273},{"time":"2026-05-07","value":177.1339},{"time":"2026-05-08","value":176.9948},{"time":"2026-05-11","value":176.8557},{"time":"2026-05-12","value":176.7165},{"time":"2026-05-13","value":176.5774},{"time":"2026-05-14","value":176.4383},{"time":"2026-05-15","value":176.2991},{"time":"2026-05-18","value":176.16},{"time":"2026-05-19","value":176.0209},{"time":"2026-05-20","value":175.8817},{"time":"2026-05-21","value":175.7426},{"time":"2026-05-22","value":175.6035},{"time":"2026-05-26","value":175.4643},{"time":"2026-05-27","value":175.3252},{"time":"2026-05-28","value":175.1861},{"time":"2026-05-29","value":175.047},{"time":"2026-06-01","value":174.9078},{"time":"2026-06-02","value":174.7687},{"time":"2026-06-03","value":174.6296},{"time":"2026-06-04","value":174.4904},{"time":"2026-06-05","value":174.3513},{"time":"2026-06-08","value":174.2122},{"time":"2026-06-09","value":174.073},{"time":"2026-06-10","value":173.9339},{"time":"2026-06-11","value":173.7948},{"time":"2026-06-12","value":173.6557},{"time":"2026-06-15","value":173.5165},{"time":"2026-06-16","value":173.3774},{"time":"2026-06-17","value":173.2383},{"time":"2026-06-18","value":173.0991},{"time":"2026-06-22","value":172.96},{"time":"2026-06-23","value":172.8209},{"time":"2026-06-24","value":172.6817},{"time":"2026-06-25","value":172.5426},{"time":"2026-06-26","value":172.4035},{"time":"2026-06-29","value":172.2643},{"time":"2026-06-30","value":172.1252},{"time":"2026-07-01","value":171.9861},{"time":"2026-07-02","value":171.847},{"time":"2026-07-06","value":171.7078},{"time":"2026-07-07","value":171.5687},{"time":"2026-07-08","value":171.4296},{"time":"2026-07-09","value":171.2904},{"time":"2026-07-10","value":171.1513},{"time":"2026-07-13","value":171.0122},{"time":"2026-07-14","value":170.873},{"time":"2026-07-15","value":170.7339},{"time":"2026-07-16","value":170.5948},{"time":"2026-07-17","value":170.4557},{"time":"2026-07-20","value":170.3165},{"time":"2026-07-21","value":170.1774},{"time":"2026-07-22","value":170.0383},{"time":"2026-07-23","value":169.8991},{"time":"2026-07-24","value":169.76},{"time":"2026-07-27","value":169.6209},{"time":"2026-07-28","value":169.4817},{"time":"2026-07-29","value":169.3426},{"time":"2026-07-30","value":169.2035},{"time":"2026-07-31","value":169.0643},{"time":"2026-08-03","value":168.9252},{"time":"2026-08-04","value":168.7861},{"time":"2026-08-05","value":168.647},{"time":"2026-08-06","value":168.5078},{"time":"2026-08-07","value":168.3687},{"time":"2026-08-10","value":168.2296},{"time":"2026-08-11","value":168.0904},{"time":"2026-08-12","value":167.9513},{"time":"2026-08-13","value":167.8122},{"time":"2026-08-14","value":167.673},{"time":"2026-08-17","value":167.5339},{"time":"2026-08-18","value":167.3948},{"time":"2026-08-19","value":167.2557},{"time":"2026-08-20","value":167.1165},{"time":"2026-08-21","value":166.9774},{"time":"2026-08-24","value":166.8383},{"time":"2026-08-25","value":166.6991},{"time":"2026-08-26","value":166.56},{"time":"2026-08-27","value":166.4209},{"time":"2026-08-28","value":166.2817},{"time":"2026-08-31","value":166.1426},{"time":"2026-09-01","value":166.0035},{"time":"2026-09-02","value":165.8643},{"time":"2026-09-03","value":165.7252},{"time":"2026-09-04","value":165.5861},{"time":"2026-09-08","value":165.447},{"time":"2026-09-09","value":165.3078},{"time":"2026-09-10","value":165.1687},{"time":"2026-09-11","value":165.0296},{"time":"2026-09-14","value":164.8904},{"time":"2026-09-15","value":164.7513},{"time":"2026-09-16","value":164.6122},{"time":"2026-09-17","value":164.473},{"time":"2026-09-18","value":164.3339},{"time":"2026-09-21","value":164.1948},{"time":"2026-09-22","value":164.0557},{"time":"2026-09-23","value":163.9165},{"time":"2026-09-24","value":163.7774},{"time":"2026-09-25","value":163.6383},{"time":"2026-09-28","value":163.4991},{"time":"2026-09-29","value":163.36},{"time":"2026-09-30","value":163.2209},{"time":"2026-10-01","value":163.0817},{"time":"2026-10-02","value":162.9426},{"time":"2026-10-05","value":162.8035},{"time":"2026-10-06","value":162.6643},{"time":"2026-10-07","value":162.5252},{"time":"2026-10-08","value":162.3861}],"hard_stop":null,"bought":165.22,"bought_time":"2026-10-08","level":162.39,"look":{"card":"#0b1d4a","border":"rgba(147,197,253,.30)","bg":"#123a8c","bg2":"#0a1633","text":"#c7d7f5","grid":"rgba(191,219,254,.08)","axis":"rgba(191,219,254,.22)","up":"#34d399","dn":"#fb7185","trend":"#93c5fd","stop":"#fb7185","fill":"#fbbf24","mark":"rgba(191,219,254,.08)"}},L=d.look;
+if(!window.LightweightCharts)return;
+var el=document.getElementById('bo-chart'),band=document.getElementById('bo-band'),tag=document.getElementById('bo-tag');
+var bg=L.bg2?{type:'gradient',topColor:L.bg,bottomColor:L.bg2}:{type:'solid',color:L.bg};
+var chart=LightweightCharts.createChart(el,{autoSize:true,
+ layout:{background:bg,textColor:L.text,fontSize:11,fontFamily:'system-ui,-apple-system,Segoe UI,sans-serif'},
+ grid:{vertLines:{color:L.grid},horzLines:{color:L.grid}},
+ rightPriceScale:{borderColor:L.axis,scaleMargins:{top:.12,bottom:.1}},
+ timeScale:{borderColor:L.axis,timeVisible:false},
+ crosshair:{mode:0},
+ watermark:{visible:true,text:d.ticker,fontSize:64,fontStyle:'bold',color:L.mark,horzAlign:'center',vertAlign:'center'},
+ handleScroll:false,handleScale:false});
+var c=chart.addCandlestickSeries({upColor:L.up,downColor:L.dn,borderUpColor:L.up,borderDownColor:L.dn,wickUpColor:L.up,wickDownColor:L.dn,lastValueVisible:false,priceLineVisible:false});
+c.setData(d.bars);
+if(d.resistance&&d.resistance.length)chart.addLineSeries({color:L.trend,lineWidth:3,priceLineVisible:false,lastValueVisible:true,title:'Trend line'}).setData(d.resistance);
+if(d.hard_stop)c.createPriceLine({price:d.hard_stop,color:L.stop,lineWidth:2,lineStyle:2,axisLabelVisible:true,title:'Stop'});
+if(d.bought)c.createPriceLine({price:d.bought,color:L.fill,lineWidth:2,lineStyle:0,axisLabelVisible:true,title:'Bought'});
+c.setMarkers([{time:d.bought_time,position:'belowBar',color:L.up,shape:'arrowUp',size:2}]);
+var n=d.bars.length;
+chart.timeScale().setVisibleLogicalRange({from:Math.max(-1,n-(el.clientWidth<520?42:60)),to:n+(el.clientWidth<520?5:7)});
+tag.textContent='▲ Breakout'+(d.level?' $'+(+d.level).toFixed(2):'');
+tag.style.background=L.up;
+band.style.background='linear-gradient(180deg,'+L.up+'00 0%,'+L.up+'33 45%,'+L.up+'00 100%)';
+var place=function(){var x=chart.timeScale().timeToCoordinate(d.bought_time);
+ if(x==null){band.style.display=tag.style.display='none';return;}
+ var w=Math.max(10,chart.timeScale().options().barSpacing*1.6);
+ band.style.display=tag.style.display='block';
+ band.style.left=(x-w/2)+'px';band.style.width=w+'px';tag.style.left=x+'px';};
+chart.timeScale().subscribeVisibleLogicalRangeChange(function(){requestAnimationFrame(place);});
+if(window.ResizeObserver)new ResizeObserver(function(){requestAnimationFrame(place);}).observe(el);
+[60,300,900,2000].forEach(function(t){setTimeout(place,t);});
+})();
+</script>
+<section class="frame">
+<div class="eyebrow">My 5-year valuation</div>
+<p class="fhead">My 5-year valuation for $VST: about <em>$2,891</em> by 2031.</p><div class="tape"><span>$VST</span><span>PX 165.22</span><span>EPS NTM 10.25</span><span>EPS CAGR 77.3%</span><span>P/E 16.1</span><span>5Y VALUE 2,891</span></div><div class="kpis"><div class="kpi main"><span>Upside in 5 years</span><b>+1650%</b></div><div class="kpi"><span>Price today</span><b>$165.22</b></div><div class="kpi"><span>Value 2031</span><b>&asymp; $2,891</b></div><div class="kpi"><span>Per year</span><b>+77.26%</b></div></div>
+<ol class="steps"><li><span class="sn">1</span><div class="sb"><div class="st">Earnings next year</div><p>Analysts expect <b>$10.25</b> of profit per share.</p></div></li><li><span class="sn">2</span><div class="sb"><div class="st">Earnings growth</div><p>They expect <b>77.26% a year</b>. Five years of it takes the profit to <b>$179.38</b> a share:</p><div class="bars"><div class="bar"><div class="tr"><b>$10</b><i style="height:12%"></i></div><small>Next year</small></div><div class="bar"><div class="tr"><b>$18</b><i style="height:12%"></i></div><small></small></div><div class="bar"><div class="tr"><b>$32</b><i style="height:14%"></i></div><small></small></div><div class="bar"><div class="tr"><b>$57</b><i style="height:25%"></i></div><small></small></div><div class="bar"><div class="tr"><b>$101</b><i style="height:44%"></i></div><small></small></div><div class="bar end"><div class="tr"><b>$179</b><i style="height:78%"></i></div><small>In 5 years</small></div></div></div></li><li><span class="sn">3</span><div class="sb"><div class="st">The price tag</div><p>Today the market pays <b>$16.12 for every $1</b> of next year's profit ($165.22 &divide; $10.25). At the same price tag:</p><div class="calc"><span>$179.38 &times; 16.12</span><b>&asymp; $2,891</b></div></div></li></ol>
+<p class="note"><span class="trust"><span class="tb">&#10003; Analyst consensus (Finviz)</span><span class="tb">&#10003; Checked against Nasdaq / Zacks</span></span> <b>Stress test:</b> if growth comes in the way five-year forecasts usually do, it is about <b>$699</b> (<b>+323%</b>), worked out below.</p>
+<p class="own">Not investment advice. I own $VST; my system may sell it at any time without notice.</p>
+</section>
+<div class="cta-line"><span>New entries as they happen, with the chart and the reasoning.</span>
+<a class="pill" href="https://x.com/TradingIdeas26">@TradingIdeas26</a></div>
+<section class="detail">
+<h2>The detailed model</h2>
+<p class="muted-p">Earnings model: the same numbers, with the two corrections a headline case leaves out.</p>
+<figure class="chartbox"><svg viewBox="0 0 640 270" class="chart wide" role="img" aria-label="Price path of each case over five years"><line x1="64" y1="236.0" x2="556" y2="236.0" class="g"/><text x="56" y="240.0" class="ax" text-anchor="end">$0</text><line x1="64" y1="181.5" x2="556" y2="181.5" class="g"/><text x="56" y="185.5" class="ax" text-anchor="end">$818</text><line x1="64" y1="127.0" x2="556" y2="127.0" class="g"/><text x="56" y="131.0" class="ax" text-anchor="end">$1,637</text><line x1="64" y1="72.5" x2="556" y2="72.5" class="g"/><text x="56" y="76.5" class="ax" text-anchor="end">$2,455</text><line x1="64" y1="18.0" x2="556" y2="18.0" class="g"/><text x="56" y="22.0" class="ax" text-anchor="end">$3,273</text><line x1="64" y1="225.0" x2="556" y2="225.0" class="today"/><path d="M64.0,225.0 L162.4,216.5 L260.8,201.4 L359.2,174.7 L457.6,127.4 L556.0,43.4" class="ln c-a"/><circle cx="556.0" cy="43.4" r="5" class="dot c-a"/><text x="564.0" y="47.4" class="lb c-a">$2,891</text><path d="M64.0,225.0 L162.4,221.3 L260.8,216.4 L359.2,209.8 L457.6,201.1 L556.0,189.4" class="ln c-b"/><circle cx="556.0" cy="189.4" r="5" class="dot c-b"/><text x="564.0" y="193.4" class="lb c-b">$699</text><text x="64.0" y="262" class="ax" text-anchor="middle">2026</text><text x="162.4" y="262" class="ax" text-anchor="middle">2027</text><text x="260.8" y="262" class="ax" text-anchor="middle">2028</text><text x="359.2" y="262" class="ax" text-anchor="middle">2029</text><text x="457.6" y="262" class="ax" text-anchor="middle">2030</text><text x="556.0" y="262" class="ax" text-anchor="middle">2031</text></svg><svg viewBox="0 0 340 230" class="chart narrow" role="img" aria-label="Price path of each case over five years"><line x1="52" y1="196.0" x2="280" y2="196.0" class="g"/><text x="44" y="200.0" class="ax" text-anchor="end">$0</text><line x1="52" y1="151.5" x2="280" y2="151.5" class="g"/><text x="44" y="155.5" class="ax" text-anchor="end">$818</text><line x1="52" y1="107.0" x2="280" y2="107.0" class="g"/><text x="44" y="111.0" class="ax" text-anchor="end">$1,637</text><line x1="52" y1="62.5" x2="280" y2="62.5" class="g"/><text x="44" y="66.5" class="ax" text-anchor="end">$2,455</text><line x1="52" y1="18.0" x2="280" y2="18.0" class="g"/><text x="44" y="22.0" class="ax" text-anchor="end">$3,273</text><line x1="52" y1="187.0" x2="280" y2="187.0" class="today"/><path d="M52.0,187.0 L97.6,180.1 L143.2,167.8 L188.8,146.0 L234.4,107.3 L280.0,38.8" class="ln c-a"/><circle cx="280.0" cy="38.8" r="5" class="dot c-a"/><text x="288.0" y="42.8" class="lb c-a">$2,891</text><path d="M52.0,187.0 L97.6,184.0 L143.2,180.0 L188.8,174.6 L234.4,167.5 L280.0,158.0" class="ln c-b"/><circle cx="280.0" cy="158.0" r="5" class="dot c-b"/><text x="288.0" y="162.0" class="lb c-b">$699</text><text x="52.0" y="222" class="ax" text-anchor="middle">2026</text><text x="97.6" y="222" class="ax" text-anchor="middle">2027</text><text x="143.2" y="222" class="ax" text-anchor="middle">2028</text><text x="188.8" y="222" class="ax" text-anchor="middle">2029</text><text x="234.4" y="222" class="ax" text-anchor="middle">2030</text><text x="280.0" y="222" class="ax" text-anchor="middle">2031</text></svg><figcaption><span class="key today"><i></i>Today $165</span><span class="key c-a"><i></i>My valuation</span><span class="key c-b"><i></i>Stress test</span></figcaption></figure>
+<div class="cards"><div class="card "><div class="card-k">Stress test</div><div class="card-v">+323%</div><div class="card-s">+33.4% a year &middot; about $699 in 5 years</div><div class="card-n">Growth shrunk to 33.4% a year; the P/E drifts to 16.1&times;</div></div></div>
+<h3>What goes in</h3>
+<table><tr><td>Price used</td><td>$165.22</td></tr><tr><td>Next-year earnings per share</td><td>$10.25</td></tr><tr><td>P/E on next year's earnings</td><td>16.1&times;</td></tr><tr><td>Analysts' 5-year EPS growth</td><td>77.26% a year</td></tr><tr><td>S&amp;P 500 forward P/E</td><td>19.2&times; (FactSet, 2026-09-25)</td></tr><tr><td>Analysts' average 12-month target</td><td>$213.11 (+29.0%)</td></tr></table>
+<h3>How it is computed</h3>
+<p>Price in five years = next-year earnings &times; (1 + growth)<sup>5</sup> &times; the P/E in five years. My valuation takes the analysts' consensus growth and holds today's P/E, so the price grows exactly as fast as earnings.</p><p>The stress test corrects two things. Five-year growth forecasts run hot: in Chan, Karceski &amp; Lakonishok (2003) the most optimistic fifth of companies was forecast to grow 22.4% a year and delivered 9.5%, so growth here is 1% + 0.42 &times; the forecast. And a multiple above the market's is assumed to drift back toward it; one below it is not assumed to rise.</p>
+<h3>If the P/E in five years is&hellip;</h3><p class="muted-p">Yearly return, at the consensus growth and at the stress-test growth.</p><table><tr><th>P/E</th><th>My valuation</th><th>Stress test</th></tr><tr><td>15.0&times;</td><td>+74.7%</td><td>+31.5%</td></tr><tr><td>16.1&times;</td><td>+77.2%</td><td>+33.4%</td></tr><tr><td>17.0&times;</td><td>+79.2%</td><td>+34.9%</td></tr><tr><td>19.2&times;</td><td>+83.6%</td><td>+38.2%</td></tr><tr><td>22.0&times;</td><td>+88.6%</td><td>+42.0%</td></tr></table>
+</section>
+<section class="cta">
+<h2>Catch the next breakout</h2>
+<p>An algorithm trading breakouts with real money. Follow for the next entry as it
+happens, the chart it broke out of, and a valuation like this one.</p>
+<div class="row"><a class="btn" href="https://x.com/intent/follow?screen_name=TradingIdeas26">Follow @TradingIdeas26 on X</a><a class="btn ghost" href="https://t.me/tradingideaslive">Join on Telegram</a><a class="btn ghost" href="https://x.com/intent/tweet?url=https%3A%2F%2Ftradingideas26.github.io%2Fv%2FVST-20261008-113150.html&amp;text=%24VST+5-year+valuation+by+%40TradingIdeas26">Share on X</a></div>
+</section>
+<footer>
+<p>Automated model estimate from analyst consensus. Analysts' long-term forecasts have
+historically run optimistic. Not investment advice. I own $VST, and my system may sell
+it at any time without notice.</p>
+<p>Data: Finviz quote page (fetched 2026-10-08 11:31 UTC); Nasdaq (Zacks consensus) as a cross-check; FactSet Earnings Insight for the market P/E.</p>
+</footer>
+</main></body></html>
