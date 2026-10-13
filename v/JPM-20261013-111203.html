@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$JPM &middot; 5-year valuation &middot; TradingIdeas26</title>
+<meta name="description" content="My 5-year valuation with its arithmetic, and a stress test below it. Research by @TradingIdeas26. Not investment advice.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="$JPM · My 5-year valuation: +68%">
+<meta property="og:description" content="My 5-year valuation with its arithmetic, and a stress test below it. Research by @TradingIdeas26. Not investment advice.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://tradingideas26.github.io/v/JPM-20261013-111203.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="https://tradingideas26.github.io/v/JPM-20261013-111203.png">
+<meta name="twitter:image:alt" content="$JPM · My 5-year valuation: +68%">
+<meta name="twitter:site" content="@TradingIdeas26">
+<meta name="twitter:title" content="$JPM · My 5-year valuation: +68%">
+<meta name="twitter:description" content="My 5-year valuation with its arithmetic, and a stress test below it. Research by @TradingIdeas26. Not investment advice.">
+<meta name="theme-color" content="#0b1020">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060a13;--ink:#e8edf5;--muted:#93a1b5;--line:rgba(148,163,184,.16);
+--card:rgba(13,20,36,.72);--up1:#34d399;--up2:#22d3ee;--dn1:#fb7185;--dn2:#f59e0b;--b:#a5b4fc}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--ink);font:16px/1.55 Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+background:radial-gradient(900px 620px at -10% -10%,rgba(124,58,237,.9),transparent 60%),
+radial-gradient(820px 560px at 110% 0%,rgba(6,182,212,.8),transparent 58%),
+radial-gradient(900px 720px at 50% 115%,rgba(16,185,129,.6),transparent 60%),#0b1020;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;
+background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;
+-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 25%,transparent 72%);
+mask-image:radial-gradient(ellipse at 50% 0%,#000 25%,transparent 72%)}
+main{position:relative;max-width:760px;margin:0 auto;padding:18px 16px 56px}
+a{color:inherit}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0 22px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+background:linear-gradient(135deg,var(--up1),var(--up2));box-shadow:0 6px 24px rgba(34,211,238,.35)}
+.brand b{display:block;font-size:.98rem;letter-spacing:-.01em}
+.brand small{display:block;color:var(--muted);font-size:.74rem;margin-top:-2px}
+.pill{font-size:.82rem;font-weight:600;text-decoration:none;padding:8px 14px;border-radius:999px;
+border:1px solid var(--line);background:rgba(255,255,255,.04);white-space:nowrap}
+.hero h1{font-size:clamp(2rem,7vw,2.8rem);line-height:1.05;letter-spacing:-.03em;margin:0}
+.hero .name{color:var(--muted);font-size:1rem;margin:6px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.chip{font-size:.74rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.frame{position:relative;margin:22px 0 14px;padding:22px 20px;border-radius:22px;
+border:1px solid transparent;
+background:linear-gradient(var(--card),var(--card)) padding-box,
+linear-gradient(135deg,rgba(52,211,153,.75),rgba(34,211,238,.35) 45%,rgba(165,180,252,.35)) border-box;
+box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.02) inset;
+-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.big{font-size:clamp(3.4rem,15vw,5.2rem);line-height:1;font-weight:800;letter-spacing:-.04em;margin:6px 0 4px;
+background:linear-gradient(90deg,var(--up1),var(--up2));-webkit-background-clip:text;background-clip:text;color:transparent;
+font-variant-numeric:tabular-nums}
+.big.neg{background:linear-gradient(90deg,var(--dn1),var(--dn2));-webkit-background-clip:text;background-clip:text}
+.sub{color:var(--muted);margin:0 0 16px}
+.eq{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:4px 0 12px}
+.term{flex:1 1 140px;min-width:0;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+.term .k{display:block;font-size:.72rem;color:var(--muted);line-height:1.25}
+.term .v{display:block;font-size:1.18rem;font-weight:700;font-variant-numeric:tabular-nums;margin-top:2px}
+.term.hl{border-color:rgba(52,211,153,.55);background:rgba(52,211,153,.08)}
+.op{font-weight:700;color:var(--up2);font-size:.95rem;padding:0 2px;white-space:nowrap}
+.note{font-size:.9rem;color:var(--muted);margin:6px 0 0}
+.note b{color:var(--ink)}
+.cta-line{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;
+margin:0 0 8px;padding:12px 14px;border-radius:14px;border:1px dashed var(--line);font-size:.9rem;color:var(--muted)}
+.btn{display:inline-block;font-weight:700;text-decoration:none;padding:11px 18px;border-radius:12px;
+color:#051016;background:linear-gradient(90deg,var(--up1),var(--up2));box-shadow:0 8px 26px rgba(34,211,238,.25)}
+.btn.ghost{color:var(--ink);background:rgba(255,255,255,.05);border:1px solid var(--line);box-shadow:none}
+.detail{margin-top:56px;padding-top:26px;border-top:1px solid var(--line)}
+.detail h2{font-size:1.25rem;letter-spacing:-.02em;margin:0}
+.muted-p{color:var(--muted);margin:4px 0 14px;font-size:.92rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:14px 0}
+.card{padding:16px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.card-k{font-size:.78rem;color:var(--muted)}
+.card-v{font-size:1.9rem;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.card-s{font-size:.86rem}
+.card-n{font-size:.8rem;color:var(--muted);margin-top:4px}
+.card.muted{opacity:.85}
+.chartbox{margin:16px 0 6px;padding:10px 8px 6px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.chart{width:100%;height:auto;display:block}
+.chart .g{stroke:rgba(148,163,184,.12)}
+.chart .today{stroke:rgba(148,163,184,.45);stroke-dasharray:4 5}
+.chart .ax{fill:#7f8ca0;font-size:11px}
+.chart .ln{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.chart .lb{font-size:12px;font-weight:700}
+.c-a.ln{stroke:var(--up1)} .c-a.dot{fill:var(--up1)} .c-a.lb{fill:var(--up1)}
+.c-b.ln{stroke:var(--b);stroke-dasharray:7 6} .c-b.dot{fill:var(--b)} .c-b.lb{fill:var(--b)}
+.c-c.ln{stroke:var(--dn2);stroke-dasharray:2 6} .c-c.dot{fill:var(--dn2)} .c-c.lb{fill:var(--dn2)}
+figcaption{display:flex;gap:14px;flex-wrap:wrap;padding:6px 8px 4px;font-size:.8rem;color:var(--muted)}
+.key i{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.key.c-a i{background:var(--up1)} .key.c-b i{background:var(--b)} .key.c-c i{background:var(--dn2)}
+h3{font-size:1rem;margin:22px 0 6px}
+table{width:100%;border-collapse:collapse;font-size:.92rem;font-variant-numeric:tabular-nums}
+td,th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:.8rem}
+.detail p{color:#c5cfdd}
+.cta{margin:40px 0 0;padding:24px 20px;border-radius:22px;text-align:center;
+background:radial-gradient(600px 200px at 50% 0%,rgba(52,211,153,.18),transparent 70%),var(--card);border:1px solid var(--line)}
+.cta h2{font-size:1.35rem;letter-spacing:-.02em;margin:0 0 6px}
+.cta p{color:var(--muted);margin:0 auto 16px;max-width:520px}
+.cta .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+footer{margin-top:28px;font-size:.78rem;color:#7f8ca0}
+footer p{margin:6px 0}
+/* design review 2026-09-30: a label under the number, the disclaimer inside
+   the frame (a screenshot of the frame alone must still say what it is), a
+   narrow chart for phones, and the equation as a calculator tape */
+.big-k{font-size:1.05rem;font-weight:600;margin:0 0 6px}
+.own{margin:14px 0 0;font-size:.8rem;color:var(--muted)}
+.chart.narrow{display:none}
+@media (max-width:480px){.chart.wide{display:none}.chart.narrow{display:block}}
+.key.today i{height:0;border-top:2px dashed var(--muted);background:none}
+@media (min-width:701px){.eq{flex-wrap:nowrap}.term{flex:1 1 0}}
+@media (max-width:700px){.eq{display:grid;grid-template-columns:minmax(6rem,max-content) 1fr;gap:6px 10px}
+.eq .term{grid-column:2}.eq .op{grid-column:1;justify-self:end;align-self:center;padding:0}}
+
+.frame{--sa:var(--acc,var(--up1,var(--g,#0e6b47)))}
+.fhead{font-size:clamp(1.25rem,4.4vw,1.7rem);line-height:1.3;font-weight:700;letter-spacing:-.01em;
+margin:8px 0 16px;color:var(--ink)}
+.fhead em{font-style:normal;color:var(--sa)}
+.tape{display:none}
+.kpis{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:8px;margin:0 0 4px}
+.kpi{padding:12px 12px 10px;border:1px solid var(--line);border-radius:10px;background:var(--card);min-width:0}
+.kpi span{display:block;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kpi b{display:block;font-size:1.2rem;font-variant-numeric:tabular-nums;margin-top:4px;color:var(--ink);white-space:nowrap}
+.kpi.main b{font-size:2.2rem;line-height:1.05;color:var(--sa)}
+@media (max-width:600px){.kpis{grid-template-columns:1fr 1fr 1fr}.kpi.main{grid-column:1/-1}}
+.steps{list-style:none;margin:16px 0 8px;padding:0;display:grid;gap:10px}
+.steps li{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;padding:14px 14px 12px;
+border:1px solid var(--line);border-radius:8px;background:var(--card)}
+.sn{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.9rem;
+color:var(--bg,#fff);background:var(--sa)}
+.sb{min-width:0}
+.st{font-weight:700;font-size:1.02rem;margin:3px 0 2px;color:var(--ink)}
+.sb p{margin:0 0 10px;font-size:.95rem;color:var(--muted)}
+.sb p b{color:var(--ink)}
+.bars{display:flex;align-items:stretch;gap:6px;height:150px}
+.bar{flex:1 1 0;min-width:0;display:flex;flex-direction:column}
+.bar .tr{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.bar b{font-size:.8rem;font-variant-numeric:tabular-nums;margin-bottom:4px;white-space:nowrap;color:var(--ink)}
+.bar i{display:block;width:100%;border-radius:5px 5px 2px 2px;background:var(--sa);opacity:.32}
+.bar.end i{opacity:1}
+.bar.end b{font-size:.92rem}
+.bar small{display:block;height:1.3em;font-size:.68rem;color:var(--muted);margin-top:5px;white-space:nowrap;
+text-align:center}
+.bar:first-child small{text-align:left}
+.bar.end small{text-align:right}
+.calc{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 12px;border-radius:8px;
+border:1px solid var(--sa);background:color-mix(in srgb,var(--sa) 9%,transparent)}
+.calc span{color:var(--muted);font-variant-numeric:tabular-nums}
+.calc b{font-size:1.3rem;font-variant-numeric:tabular-nums;color:var(--ink)}
+.trust{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
+.tb{font-size:.72rem;font-weight:600;padding:3px 9px;border-radius:999px;border:1px solid var(--line);
+color:var(--ink);white-space:nowrap}
+@media (max-width:420px){.steps li{grid-template-columns:26px 1fr;gap:10px;padding:12px 10px}
+.sn{width:26px;height:26px;font-size:.8rem}.bars{gap:4px;height:130px}.bar b{font-size:.72rem}}
+
+body{font-family:"Plus Jakarta Sans",Inter,system-ui,-apple-system,sans-serif}
+.frame{--sa:#5eead4;border-radius:26px;padding:24px 20px;
+background:linear-gradient(rgba(16,22,44,.78),rgba(16,22,44,.78)) padding-box,
+linear-gradient(135deg,rgba(94,234,212,.85),rgba(129,140,248,.6),rgba(192,132,252,.6)) border-box}
+.eyebrow{color:#a5b4fc;font-weight:700;letter-spacing:.12em}
+.fhead{font-weight:800;font-size:clamp(1.35rem,4.8vw,1.85rem);letter-spacing:-.02em}
+.fhead em{background:linear-gradient(90deg,#5eead4,#818cf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kpi{border-radius:16px;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.10)}
+.kpi.main b{background:linear-gradient(90deg,#5eead4,#818cf8,#c084fc);-webkit-background-clip:text;
+background-clip:text;color:transparent;font-weight:800}
+.steps li{border-radius:18px;background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.09)}
+.sn{background:linear-gradient(135deg,#5eead4,#818cf8);color:#0b1020}
+.bar i{background:linear-gradient(180deg,#818cf8,#5eead4)}
+.calc{border-radius:14px;border-color:rgba(94,234,212,.6)}
+.tb{background:rgba(255,255,255,.06)}
+.card,.chartbox,.cta{border-radius:22px}
+
+.bo{margin:26px 0 10px}.bo h2{margin:0 0 4px}.bo .muted-p{margin:0 0 12px}
+.bo-card{border-radius:16px;padding:14px 14px 10px;box-shadow:0 18px 40px rgba(2,6,23,.45),inset 0 1px 0 rgba(255,255,255,.04)}
+.bo-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 14px;margin:0 2px 10px}
+.bo-tk{font:800 15px/1.2 system-ui,-apple-system,Segoe UI,sans-serif;letter-spacing:.2px}
+.bo-tk small{font-weight:600;opacity:.65;margin-left:8px;font-size:12px}
+.bo-pills{display:flex;flex-wrap:wrap;gap:6px}
+.bo-pill{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border-radius:999px;font:600 11.5px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.bo-pill i{width:8px;height:8px;border-radius:50%;display:inline-block}
+.bo-wrap{position:relative;border-radius:10px;overflow:hidden}
+.bo-chart{height:380px}@media (max-width:600px){.bo-chart{height:300px}.bo-card{padding:10px 8px 8px}}
+.bo-band{position:absolute;top:0;bottom:26px;z-index:4;display:none;pointer-events:none;border-radius:4px}
+.bo-tag{position:absolute;z-index:5;display:none;pointer-events:none;transform:translate(-50%,0);top:10px;padding:3px 9px;border-radius:999px;font:700 11.5px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;color:#04130b;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.bo-foot{display:flex;justify-content:space-between;gap:10px;font:11px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;opacity:.6;margin:8px 2px 0}
+</style></head>
+<body><main>
+<header class="top">
+<a class="brand" href="https://x.com/TradingIdeas26"><span class="logo"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#051016" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+<span><b>TradingIdeas26</b><small>Algorithmic breakout research</small></span></a>
+<a class="pill" href="https://x.com/TradingIdeas26">Follow on X</a>
+</header>
+<section class="hero">
+<h1>$JPM</h1>
+<p class="name">JPMorgan Chase &amp; Co &middot; bought at $340.31 &middot; Oct 13, 2026</p>
+<div class="chips"><span class="chip">Financial</span><span class="chip">Banks - Diversified</span></div>
+</section>
+<section class="bo">
+<h2>The breakout</h2>
+<p class="muted-p">Bought at $340.31 when $JPM broke above its trend line at $339.70.</p>
+<div class="bo-card" style="background:#0b1d4a;border:1px solid rgba(147,197,253,.30);color:#c7d7f5">
+<div class="bo-head"><span class="bo-tk" style="color:#fff">$JPM<small>Daily &middot; breakout</small></span>
+<span class="bo-pills"><span class="bo-pill" style="color:#c7d7f5"><i style="background:#93c5fd"></i>Trend line <b style="color:#fff">$339.70</b></span><span class="bo-pill" style="color:#c7d7f5"><i style="background:#fbbf24"></i>Bought <b style="color:#fff">$340.31</b></span></span></div>
+<div class="bo-wrap"><div class="bo-chart" id="bo-chart"></div>
+<div class="bo-band" id="bo-band"></div><div class="bo-tag" id="bo-tag"></div></div>
+<div class="bo-foot"><span>Daily candles to the day of the buy, Oct 13, 2026</span><span>@TradingIdeas26</span></div>
+</div>
+</section>
+<script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js" integrity="sha384-JZigAjwiaZtkUbA44CWkPaT3iBb/mU5pO6QOANp+OqHd4q+1+7MG1kzp2OOP9ZfP" crossorigin="anonymous"></script>
+<script>
+(function(){
+var d={"ticker":"JPM","bars":[{"time":"2026-03-17","open":289.0,"high":291.76,"low":285.95,"close":286.89},{"time":"2026-03-18","open":286.83,"high":289.405,"low":285.1223,"close":287.74},{"time":"2026-03-19","open":286.88,"high":289.51,"low":284.62,"close":287.97},{"time":"2026-03-20","open":288.08,"high":290.71,"low":285.27,"close":286.56},{"time":"2026-03-23","open":294.31,"high":295.75,"low":287.97,"close":289.91},{"time":"2026-03-24","open":286.17,"high":295.48,"low":285.3701,"close":292.4},{"time":"2026-03-25","open":294.15,"high":297.64,"low":292.44,"close":295.42},{"time":"2026-03-26","open":292.58,"high":294.9899,"low":290.73,"close":291.66},{"time":"2026-03-27","open":289.14,"high":290.11,"low":281.75,"close":282.84},{"time":"2026-03-30","open":284.74,"high":287.25,"low":282.33,"close":283.77},{"time":"2026-03-31","open":288.47,"high":295.072,"low":284.945,"close":294.16},{"time":"2026-04-01","open":295.39,"high":298.72,"low":292.91,"close":295.38},{"time":"2026-04-02","open":291.91,"high":295.62,"low":288.72,"close":294.6},{"time":"2026-04-06","open":294.06,"high":296.83,"low":293.195,"close":295.45},{"time":"2026-04-07","open":293.14,"high":298.18,"low":292.6982,"close":297.4},{"time":"2026-04-08","open":307.97,"high":311.26,"low":305.33,"close":307.97},{"time":"2026-04-09","open":306.95,"high":311.26,"low":306.11,"close":310.33},{"time":"2026-04-10","open":310.0,"high":310.35,"low":306.72,"close":309.87},{"time":"2026-04-13","open":307.47,"high":313.74,"low":305.4571,"close":313.68},{"time":"2026-04-14","open":309.82,"high":314.32,"low":308.87,"close":311.12},{"time":"2026-04-15","open":313.95,"high":314.24,"low":304.26,"close":305.93},{"time":"2026-04-16","open":305.35,"high":309.95,"low":305.2,"close":309.95},{"time":"2026-04-17","open":312.47,"high":314.9,"low":310.09,"close":310.29},{"time":"2026-04-20","open":310.85,"high":317.13,"low":310.37,"close":316.99},{"time":"2026-04-21","open":317.49,"high":320.235,"low":312.75,"close":313.0},{"time":"2026-04-22","open":314.85,"high":315.1486,"low":311.9404,"close":313.02},{"time":"2026-04-23","open":313.52,"high":314.99,"low":308.89,"close":311.69},{"time":"2026-04-24","open":311.15,"high":311.15,"low":307.89,"close":308.28},{"time":"2026-04-27","open":306.88,"high":312.58,"low":306.88,"close":311.63},{"time":"2026-04-28","open":315.2,"high":315.45,"low":311.17,"close":311.45},{"time":"2026-04-29","open":310.57,"high":312.045,"low":307.29,"close":309.25},{"time":"2026-04-30","open":307.07,"high":314.1,"low":306.57,"close":313.23},{"time":"2026-05-01","open":313.95,"high":316.08,"low":311.83,"close":312.47},{"time":"2026-05-04","open":310.62,"high":310.65,"low":306.51,"close":307.65},{"time":"2026-05-05","open":307.71,"high":310.97,"low":306.8,"close":309.4},{"time":"2026-05-06","open":311.45,"high":316.2595,"low":311.35,"close":314.9},{"time":"2026-05-07","open":314.65,"high":316.3,"low":306.14,"close":306.27},{"time":"2026-05-08","open":308.25,"high":308.99,"low":300.5,"close":302.1},{"time":"2026-05-11","open":302.1,"high":303.19,"low":298.88,"close":300.0},{"time":"2026-05-12","open":300.02,"high":306.0624,"low":295.55,"close":304.88},{"time":"2026-05-13","open":302.27,"high":303.0,"low":300.0709,"close":300.25},{"time":"2026-05-14","open":302.25,"high":303.7504,"low":298.81,"close":299.91},{"time":"2026-05-15","open":300.205,"high":300.79,"low":296.45,"close":297.81},{"time":"2026-05-18","open":298.0,"high":301.26,"low":297.22,"close":300.73},{"time":"2026-05-19","open":301.09,"high":301.79,"low":295.26,"close":295.7},{"time":"2026-05-20","open":296.7,"high":302.925,"low":293.67,"close":301.98},{"time":"2026-05-21","open":301.23,"high":303.975,"low":300.21,"close":303.0},{"time":"2026-05-22","open":304.68,"high":307.45,"low":303.84,"close":306.38},{"time":"2026-05-26","open":308.49,"high":309.93,"low":305.44,"close":306.74},{"time":"2026-05-27","open":305.0,"high":305.9,"low":295.75,"close":299.28},{"time":"2026-05-28","open":297.57,"high":301.07,"low":295.75,"close":296.73},{"time":"2026-05-29","open":296.4,"high":299.88,"low":295.195,"close":299.31},{"time":"2026-06-01","open":297.69,"high":299.55,"low":295.27,"close":296.58},{"time":"2026-06-02","open":296.5,"high":302.07,"low":295.27,"close":300.96},{"time":"2026-06-03","open":299.92,"high":301.96,"low":296.56,"close":300.85},{"time":"2026-06-04","open":305.74,"high":312.91,"low":304.44,"close":310.89},{"time":"2026-06-05","open":314.29,"high":315.0,"low":309.6,"close":312.37},{"time":"2026-06-08","open":313.25,"high":316.295,"low":310.78,"close":311.11},{"time":"2026-06-09","open":313.51,"high":316.415,"low":309.01,"close":312.7},{"time":"2026-06-10","open":312.56,"high":314.75,"low":309.03,"close":309.14},{"time":"2026-06-11","open":309.56,"high":314.72,"low":308.88,"close":313.49},{"time":"2026-06-12","open":315.97,"high":321.3,"low":315.55,"close":320.72},{"time":"2026-06-15","open":323.92,"high":325.92,"low":318.84,"close":319.4},{"time":"2026-06-16","open":324.3,"high":331.75,"low":324.02,"close":331.14},{"time":"2026-06-17","open":332.18,"high":337.77,"low":331.5,"close":333.46},{"time":"2026-06-18","open":336.95,"high":338.09,"low":324.16,"close":325.22},{"time":"2026-06-22","open":329.7,"high":332.77,"low":326.75,"close":331.48},{"time":"2026-06-23","open":329.47,"high":335.37,"low":327.21,"close":334.14},{"time":"2026-06-24","open":333.07,"high":334.53,"low":329.77,"close":333.45},{"time":"2026-06-25","open":334.96,"high":343.4485,"low":334.76,"close":335.12},{"time":"2026-06-26","open":336.0,"high":336.4,"low":327.5,"close":329.05},{"time":"2026-06-29","open":328.28,"high":332.39,"low":327.2,"close":329.39},{"time":"2026-06-30","open":328.89,"high":330.4372,"low":326.68,"close":327.33},{"time":"2026-07-01","open":328.365,"high":335.64,"low":325.01,"close":334.07},{"time":"2026-07-02","open":338.02,"high":340.0,"low":331.77,"close":334.47},{"time":"2026-07-06","open":335.0,"high":339.715,"low":334.11,"close":337.72},{"time":"2026-07-07","open":340.975,"high":341.4,"low":337.09,"close":339.22},{"time":"2026-07-08","open":336.53,"high":336.53,"low":330.13,"close":330.62},{"time":"2026-07-09","open":331.46,"high":337.0,"low":330.8053,"close":335.47},{"time":"2026-07-10","open":337.47,"high":338.5859,"low":335.77,"close":336.47},{"time":"2026-07-13","open":338.34,"high":338.35,"low":332.5001,"close":334.53},{"time":"2026-07-14","open":327.0,"high":344.73,"low":325.75,"close":342.89},{"time":"2026-07-15","open":345.845,"high":351.24,"low":344.05,"close":346.91},{"time":"2026-07-16","open":349.28,"high":349.34,"low":341.11,"close":343.15},{"time":"2026-07-17","open":339.03,"high":346.125,"low":335.05,"close":341.1},{"time":"2026-07-20","open":341.8,"high":344.26,"low":337.37,"close":338.87},{"time":"2026-07-21","open":340.115,"high":345.735,"low":337.3,"close":345.23},{"time":"2026-07-22","open":345.07,"high":349.07,"low":344.2501,"close":348.21},{"time":"2026-07-23","open":346.58,"high":349.92,"low":345.42,"close":349.9},{"time":"2026-07-24","open":350.64,"high":353.37,"low":347.5,"close":353.21},{"time":"2026-07-27","open":357.89,"high":359.05,"low":352.58,"close":356.2},{"time":"2026-07-28","open":357.3,"high":359.3,"low":354.15,"close":357.31},{"time":"2026-07-29","open":356.43,"high":357.37,"low":343.78,"close":344.71},{"time":"2026-07-30","open":347.54,"high":352.28,"low":345.37,"close":350.85},{"time":"2026-07-31","open":353.3,"high":354.47,"low":349.7,"close":351.79},{"time":"2026-08-03","open":353.75,"high":355.62,"low":350.84,"close":352.64},{"time":"2026-08-04","open":355.0,"high":363.0,"low":353.873,"close":357.52},{"time":"2026-08-05","open":358.97,"high":362.17,"low":358.2,"close":359.24},{"time":"2026-08-06","open":362.81,"high":362.81,"low":354.945,"close":356.3},{"time":"2026-08-07","open":355.76,"high":358.8543,"low":353.33,"close":357.52},{"time":"2026-08-10","open":357.96,"high":359.99,"low":356.5,"close":359.79},{"time":"2026-08-11","open":360.05,"high":363.12,"low":358.6,"close":362.04},{"time":"2026-08-12","open":362.97,"high":366.09,"low":361.3,"close":365.18},{"time":"2026-08-13","open":366.5,"high":366.5,"low":361.52,"close":363.11},{"time":"2026-08-14","open":363.0,"high":365.9,"low":361.45,"close":362.84},{"time":"2026-08-17","open":361.94,"high":365.75,"low":360.96,"close":360.96},{"time":"2026-08-18","open":362.34,"high":363.57,"low":359.27,"close":363.25},{"time":"2026-08-19","open":363.01,"high":363.05,"low":355.645,"close":357.26},{"time":"2026-08-20","open":357.6,"high":357.95,"low":351.55,"close":351.55},{"time":"2026-08-21","open":354.07,"high":356.86,"low":350.3666,"close":351.58},{"time":"2026-08-24","open":353.3,"high":358.28,"low":352.815,"close":356.39},{"time":"2026-08-25","open":357.0,"high":357.37,"low":353.0737,"close":356.69},{"time":"2026-08-26","open":356.5,"high":358.35,"low":354.6001,"close":356.5},{"time":"2026-08-27","open":354.68,"high":357.57,"low":352.225,"close":354.22},{"time":"2026-08-28","open":355.67,"high":358.73,"low":354.22,"close":357.62},{"time":"2026-08-31","open":355.9,"high":357.77,"low":354.7701,"close":356.02},{"time":"2026-09-01","open":355.73,"high":359.93,"low":354.12,"close":354.95},{"time":"2026-09-02","open":357.55,"high":361.47,"low":353.79,"close":356.22},{"time":"2026-09-03","open":358.675,"high":362.85,"low":356.39,"close":362.06},{"time":"2026-09-04","open":361.0,"high":362.86,"low":355.2,"close":358.64},{"time":"2026-09-08","open":357.1,"high":358.55,"low":353.23,"close":353.51},{"time":"2026-09-09","open":352.0,"high":356.33,"low":348.69,"close":354.71},{"time":"2026-09-10","open":353.51,"high":354.22,"low":351.12,"close":353.56},{"time":"2026-09-11","open":358.32,"high":360.05,"low":354.79,"close":356.23},{"time":"2026-09-14","open":354.23,"high":355.28,"low":347.545,"close":350.13},{"time":"2026-09-15","open":351.0,"high":354.7,"low":343.0717,"close":352.49},{"time":"2026-09-16","open":353.38,"high":355.6,"low":344.685,"close":348.92},{"time":"2026-09-17","open":352.245,"high":353.49,"low":345.27,"close":349.31},{"time":"2026-09-18","open":347.89,"high":349.67,"low":345.01,"close":349.67},{"time":"2026-09-21","open":353.67,"high":354.5,"low":350.08,"close":352.04},{"time":"2026-09-22","open":352.0,"high":352.1025,"low":337.3,"close":340.0},{"time":"2026-09-23","open":337.61,"high":341.44,"low":336.981,"close":337.53},{"time":"2026-09-24","open":338.12,"high":339.37,"low":335.28,"close":338.56},{"time":"2026-09-25","open":340.765,"high":343.31,"low":338.64,"close":343.06},{"time":"2026-09-28","open":341.83,"high":342.0,"low":336.3,"close":336.59},{"time":"2026-09-29","open":337.0,"high":338.75,"low":333.33,"close":334.98},{"time":"2026-09-30","open":334.89,"high":336.34,"low":330.83,"close":330.83},{"time":"2026-10-01","open":328.75,"high":333.58,"low":325.87,"close":333.18},{"time":"2026-10-02","open":334.0,"high":334.845,"low":330.0,"close":332.38},{"time":"2026-10-05","open":333.31,"high":333.75,"low":330.59,"close":332.38},{"time":"2026-10-06","open":332.73,"high":333.79,"low":330.93,"close":331.28},{"time":"2026-10-07","open":327.2,"high":329.8699,"low":325.07,"close":329.58},{"time":"2026-10-08","open":327.25,"high":332.31,"low":325.625,"close":331.42},{"time":"2026-10-09","open":331.2,"high":333.54,"low":330.58,"close":332.99},{"time":"2026-10-12","open":334.3,"high":336.34,"low":333.55,"close":334.3},{"time":"2026-10-13","open":340.0,"high":340.0,"low":340.0,"close":340.0}],"resistance":[{"time":"2026-09-11","value":360.05},{"time":"2026-09-14","value":359.125},{"time":"2026-09-15","value":358.2},{"time":"2026-09-16","value":357.275},{"time":"2026-09-17","value":356.35},{"time":"2026-09-18","value":355.425},{"time":"2026-09-21","value":354.5},{"time":"2026-09-22","value":353.575},{"time":"2026-09-23","value":352.65},{"time":"2026-09-24","value":351.725},{"time":"2026-09-25","value":350.8},{"time":"2026-09-28","value":349.875},{"time":"2026-09-29","value":348.95},{"time":"2026-09-30","value":348.025},{"time":"2026-10-01","value":347.1},{"time":"2026-10-02","value":346.175},{"time":"2026-10-05","value":345.25},{"time":"2026-10-06","value":344.325},{"time":"2026-10-07","value":343.4},{"time":"2026-10-08","value":342.475},{"time":"2026-10-09","value":341.55},{"time":"2026-10-12","value":340.625},{"time":"2026-10-13","value":339.7}],"hard_stop":null,"bought":340.31,"bought_time":"2026-10-13","level":339.7,"look":{"card":"#0b1d4a","border":"rgba(147,197,253,.30)","bg":"#123a8c","bg2":"#0a1633","text":"#c7d7f5","grid":"rgba(191,219,254,.08)","axis":"rgba(191,219,254,.22)","up":"#34d399","dn":"#fb7185","trend":"#93c5fd","stop":"#fb7185","fill":"#fbbf24","mark":"rgba(191,219,254,.08)"}},L=d.look;
+if(!window.LightweightCharts)return;
+var el=document.getElementById('bo-chart'),band=document.getElementById('bo-band'),tag=document.getElementById('bo-tag');
+var bg=L.bg2?{type:'gradient',topColor:L.bg,bottomColor:L.bg2}:{type:'solid',color:L.bg};
+var chart=LightweightCharts.createChart(el,{autoSize:true,
+ layout:{background:bg,textColor:L.text,fontSize:11,fontFamily:'system-ui,-apple-system,Segoe UI,sans-serif'},
+ grid:{vertLines:{color:L.grid},horzLines:{color:L.grid}},
+ rightPriceScale:{borderColor:L.axis,scaleMargins:{top:.12,bottom:.1}},
+ timeScale:{borderColor:L.axis,timeVisible:false},
+ crosshair:{mode:0},
+ watermark:{visible:true,text:d.ticker,fontSize:64,fontStyle:'bold',color:L.mark,horzAlign:'center',vertAlign:'center'},
+ handleScroll:false,handleScale:false});
+var c=chart.addCandlestickSeries({upColor:L.up,downColor:L.dn,borderUpColor:L.up,borderDownColor:L.dn,wickUpColor:L.up,wickDownColor:L.dn,lastValueVisible:false,priceLineVisible:false});
+c.setData(d.bars);
+if(d.resistance&&d.resistance.length)chart.addLineSeries({color:L.trend,lineWidth:3,priceLineVisible:false,lastValueVisible:true,title:'Trend line'}).setData(d.resistance);
+if(d.hard_stop)c.createPriceLine({price:d.hard_stop,color:L.stop,lineWidth:2,lineStyle:2,axisLabelVisible:true,title:'Stop'});
+if(d.bought)c.createPriceLine({price:d.bought,color:L.fill,lineWidth:2,lineStyle:0,axisLabelVisible:true,title:'Bought'});
+c.setMarkers([{time:d.bought_time,position:'belowBar',color:L.up,shape:'arrowUp',size:2}]);
+var n=d.bars.length;
+chart.timeScale().setVisibleLogicalRange({from:Math.max(-1,n-(el.clientWidth<520?42:60)),to:n+(el.clientWidth<520?5:7)});
+tag.textContent='▲ Breakout'+(d.level?' $'+(+d.level).toFixed(2):'');
+tag.style.background=L.up;
+band.style.background='linear-gradient(180deg,'+L.up+'00 0%,'+L.up+'33 45%,'+L.up+'00 100%)';
+var place=function(){var x=chart.timeScale().timeToCoordinate(d.bought_time);
+ if(x==null){band.style.display=tag.style.display='none';return;}
+ var w=Math.max(10,chart.timeScale().options().barSpacing*1.6);
+ band.style.display=tag.style.display='block';
+ band.style.left=(x-w/2)+'px';band.style.width=w+'px';tag.style.left=x+'px';};
+chart.timeScale().subscribeVisibleLogicalRangeChange(function(){requestAnimationFrame(place);});
+if(window.ResizeObserver)new ResizeObserver(function(){requestAnimationFrame(place);}).observe(el);
+[60,300,900,2000].forEach(function(t){setTimeout(place,t);});
+})();
+</script>
+<section class="frame">
+<div class="eyebrow">My 5-year valuation</div>
+<p class="fhead">My 5-year valuation for $JPM: about <em>$572</em> by 2031.</p><div class="tape"><span>$JPM</span><span>PX 340.31</span><span>EPS NTM 25.28</span><span>EPS CAGR 10.9%</span><span>P/E 13.5</span><span>5Y VALUE 572</span></div><div class="kpis"><div class="kpi main"><span>Upside in 5 years</span><b>+68%</b></div><div class="kpi"><span>Price today</span><b>$340.31</b></div><div class="kpi"><span>Value 2031</span><b>&asymp; $572</b></div><div class="kpi"><span>Per year</span><b>+10.95%</b></div></div>
+<ol class="steps"><li><span class="sn">1</span><div class="sb"><div class="st">Earnings next year</div><p>Analysts expect <b>$25.28</b> of profit per share.</p></div></li><li><span class="sn">2</span><div class="sb"><div class="st">Earnings growth</div><p>They expect <b>10.95% a year</b>. Five years of it takes the profit to <b>$42.50</b> a share:</p><div class="bars"><div class="bar"><div class="tr"><b>$25</b><i style="height:46%"></i></div><small>Next year</small></div><div class="bar"><div class="tr"><b>$28</b><i style="height:51%"></i></div><small></small></div><div class="bar"><div class="tr"><b>$31</b><i style="height:57%"></i></div><small></small></div><div class="bar"><div class="tr"><b>$35</b><i style="height:63%"></i></div><small></small></div><div class="bar"><div class="tr"><b>$38</b><i style="height:70%"></i></div><small></small></div><div class="bar end"><div class="tr"><b>$43</b><i style="height:78%"></i></div><small>In 5 years</small></div></div></div></li><li><span class="sn">3</span><div class="sb"><div class="st">The price tag</div><p>Today the market pays <b>$13.46 for every $1</b> of next year's profit ($340.31 &divide; $25.28). At the same price tag:</p><div class="calc"><span>$42.50 &times; 13.46</span><b>&asymp; $572</b></div></div></li></ol>
+<p class="note"><span class="trust"><span class="tb">&#10003; Analyst consensus (Finviz)</span><span class="tb">&#10003; Checked against Nasdaq / Zacks</span></span> <b>Stress test:</b> if growth comes in the way five-year forecasts usually do, it is about <b>$447</b> (<b>+31%</b>), worked out below.</p>
+<p class="own">Not investment advice. I own $JPM; my system may sell it at any time without notice.</p>
+</section>
+<div class="cta-line"><span>New entries as they happen, with the chart and the reasoning.</span>
+<a class="pill" href="https://x.com/TradingIdeas26">@TradingIdeas26</a></div>
+<section class="detail">
+<h2>The detailed model</h2>
+<p class="muted-p">Earnings model: the same numbers, with the two corrections a headline case leaves out.</p>
+<figure class="chartbox"><svg viewBox="0 0 640 270" class="chart wide" role="img" aria-label="Price path of each case over five years"><line x1="64" y1="236.0" x2="556" y2="236.0" class="g"/><text x="56" y="240.0" class="ax" text-anchor="end">$308</text><line x1="64" y1="181.5" x2="556" y2="181.5" class="g"/><text x="56" y="185.5" class="ax" text-anchor="end">$382</text><line x1="64" y1="127.0" x2="556" y2="127.0" class="g"/><text x="56" y="131.0" class="ax" text-anchor="end">$456</text><line x1="64" y1="72.5" x2="556" y2="72.5" class="g"/><text x="56" y="76.5" class="ax" text-anchor="end">$530</text><line x1="64" y1="18.0" x2="556" y2="18.0" class="g"/><text x="56" y="22.0" class="ax" text-anchor="end">$605</text><line x1="64" y1="212.2" x2="556" y2="212.2" class="today"/><path d="M64.0,212.2 L162.4,184.8 L260.8,154.4 L359.2,120.7 L457.6,83.3 L556.0,41.8" class="ln c-a"/><circle cx="556.0" cy="41.8" r="5" class="dot c-a"/><text x="564.0" y="45.8" class="lb c-a">$572</text><path d="M64.0,212.2 L162.4,198.2 L260.8,183.4 L359.2,167.8 L457.6,151.3 L556.0,133.9" class="ln c-b"/><circle cx="556.0" cy="133.9" r="5" class="dot c-b"/><text x="564.0" y="137.9" class="lb c-b">$447</text><text x="64.0" y="262" class="ax" text-anchor="middle">2026</text><text x="162.4" y="262" class="ax" text-anchor="middle">2027</text><text x="260.8" y="262" class="ax" text-anchor="middle">2028</text><text x="359.2" y="262" class="ax" text-anchor="middle">2029</text><text x="457.6" y="262" class="ax" text-anchor="middle">2030</text><text x="556.0" y="262" class="ax" text-anchor="middle">2031</text></svg><svg viewBox="0 0 340 230" class="chart narrow" role="img" aria-label="Price path of each case over five years"><line x1="52" y1="196.0" x2="280" y2="196.0" class="g"/><text x="44" y="200.0" class="ax" text-anchor="end">$308</text><line x1="52" y1="151.5" x2="280" y2="151.5" class="g"/><text x="44" y="155.5" class="ax" text-anchor="end">$382</text><line x1="52" y1="107.0" x2="280" y2="107.0" class="g"/><text x="44" y="111.0" class="ax" text-anchor="end">$456</text><line x1="52" y1="62.5" x2="280" y2="62.5" class="g"/><text x="44" y="66.5" class="ax" text-anchor="end">$530</text><line x1="52" y1="18.0" x2="280" y2="18.0" class="g"/><text x="44" y="22.0" class="ax" text-anchor="end">$605</text><line x1="52" y1="176.5" x2="280" y2="176.5" class="today"/><path d="M52.0,176.5 L97.6,154.2 L143.2,129.4 L188.8,101.9 L234.4,71.3 L280.0,37.5" class="ln c-a"/><circle cx="280.0" cy="37.5" r="5" class="dot c-a"/><text x="288.0" y="41.5" class="lb c-a">$572</text><path d="M52.0,176.5 L97.6,165.1 L143.2,153.0 L188.8,140.3 L234.4,126.8 L280.0,112.6" class="ln c-b"/><circle cx="280.0" cy="112.6" r="5" class="dot c-b"/><text x="288.0" y="116.6" class="lb c-b">$447</text><text x="52.0" y="222" class="ax" text-anchor="middle">2026</text><text x="97.6" y="222" class="ax" text-anchor="middle">2027</text><text x="143.2" y="222" class="ax" text-anchor="middle">2028</text><text x="188.8" y="222" class="ax" text-anchor="middle">2029</text><text x="234.4" y="222" class="ax" text-anchor="middle">2030</text><text x="280.0" y="222" class="ax" text-anchor="middle">2031</text></svg><figcaption><span class="key today"><i></i>Today $340</span><span class="key c-a"><i></i>My valuation</span><span class="key c-b"><i></i>Stress test</span></figcaption></figure>
+<div class="cards"><div class="card "><div class="card-k">Stress test</div><div class="card-v">+31%</div><div class="card-s">+5.6% a year &middot; about $447 in 5 years</div><div class="card-n">Growth shrunk to 5.6% a year; the P/E drifts to 13.5&times;</div></div></div>
+<h3>What goes in</h3>
+<table><tr><td>Price used</td><td>$340.31</td></tr><tr><td>Next-year earnings per share</td><td>$25.28</td></tr><tr><td>P/E on next year's earnings</td><td>13.5&times;</td></tr><tr><td>Analysts' 5-year EPS growth</td><td>10.95% a year</td></tr><tr><td>S&amp;P 500 forward P/E</td><td>19.2&times; (FactSet, 2026-09-25)</td></tr><tr><td>Analysts' average 12-month target</td><td>$373.88 (+9.9%)</td></tr></table>
+<h3>How it is computed</h3>
+<p>Price in five years = next-year earnings &times; (1 + growth)<sup>5</sup> &times; the P/E in five years. My valuation takes the analysts' consensus growth and holds today's P/E, so the price grows exactly as fast as earnings.</p><p>The stress test corrects two things. Five-year growth forecasts run hot: in Chan, Karceski &amp; Lakonishok (2003) the most optimistic fifth of companies was forecast to grow 22.4% a year and delivered 9.5%, so growth here is 1% + 0.42 &times; the forecast. And a multiple above the market's is assumed to drift back toward it; one below it is not assumed to rise.</p>
+<h3>If the P/E in five years is&hellip;</h3><p class="muted-p">Yearly return, at the consensus growth and at the stress-test growth.</p><table><tr><th>P/E</th><th>My valuation</th><th>Stress test</th></tr><tr><td>13.5&times;</td><td>+11.0%</td><td>+5.7%</td></tr><tr><td>15.0&times;</td><td>+13.4%</td><td>+7.9%</td></tr><tr><td>17.0&times;</td><td>+16.3%</td><td>+10.6%</td></tr><tr><td>19.2&times;</td><td>+19.1%</td><td>+13.4%</td></tr><tr><td>22.0&times;</td><td>+22.4%</td><td>+16.5%</td></tr></table>
+</section>
+<section class="cta">
+<h2>Catch the next breakout</h2>
+<p>An algorithm trading breakouts with real money. Follow for the next entry as it
+happens, the chart it broke out of, and a valuation like this one.</p>
+<div class="row"><a class="btn" href="https://x.com/intent/follow?screen_name=TradingIdeas26">Follow @TradingIdeas26 on X</a><a class="btn ghost" href="https://t.me/tradingideaslive">Join on Telegram</a><a class="btn ghost" href="https://x.com/intent/tweet?url=https%3A%2F%2Ftradingideas26.github.io%2Fv%2FJPM-20261013-111203.html&amp;text=%24JPM+5-year+valuation+by+%40TradingIdeas26">Share on X</a></div>
+</section>
+<footer>
+<p>Automated model estimate from analyst consensus. Analysts' long-term forecasts have
+historically run optimistic. Not investment advice. I own $JPM, and my system may sell
+it at any time without notice.</p>
+<p>Data: Finviz quote page (fetched 2026-10-13 11:12 UTC); Nasdaq (Zacks consensus) as a cross-check; FactSet Earnings Insight for the market P/E.</p>
+</footer>
+</main></body></html>
